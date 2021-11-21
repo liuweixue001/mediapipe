@@ -19,6 +19,7 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 2560)
 cap.set(4, 1920)
 # 识别手势
+# 使用4.5版本的opencv需要设置detectionCon=1
 detector = HandDetector(detectionCon=0.8)
 #  定义按键类
 class Button():
@@ -32,7 +33,7 @@ keys = [['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/']]
 
 buttonList = []
-finalText = ''
+
 
 for i in range(len(keys)):
     for j, key in enumerate(keys[i]):
@@ -49,7 +50,7 @@ def draw_keyboard(img, buttonList):
                     cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2)
     return img
 
-
+finalText = ''
 while True:
     success, img = cap.read()
     # 识别手势

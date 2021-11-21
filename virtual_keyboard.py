@@ -3,11 +3,9 @@
 根据食指指尖确定选定的键
 根据大拇指与食指距离判断是否按下
 使用说明：
-    将大拇指移向食指表面为按下
+    将大拇指指尖移向食指指尖为确定按下
     累计十个字符清零
     默认距离阈值为5000，即无需确认
-    cvzone安装1.4.1
-    opencv建议安装3.4版本，新版本没有cv2.flip()函数，捕捉的摄像头会存在镜像
 '''
 import cv2
 from cvzone.HandTrackingModule import HandDetector
